@@ -1,6 +1,5 @@
 const greeting = document.querySelector('#greeting');
 const languageSelector = document.querySelector('#language-selector');
-const languageButtons = document.querySelectorAll('[data-language]');
 
 const translations = {
   en: {
@@ -56,11 +55,15 @@ function applyLanguage(language) {
   });
 }
 
-languageButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    applyLanguage(button.dataset.language);
-    document.body.classList.add('language-selected');
-    languageSelector.setAttribute('aria-hidden', 'true');
-    greeting.focus();
-  });
+document.addEventListener('click', (event) => {
+  const button = event.target.closest('[data-language]');
+
+  if (!button) {
+    return;
+  }
+
+  applyLanguage(button.dataset.language);
+  document.body.classList.add('language-selected');
+  languageSelector.setAttribute('aria-hidden', 'true');
+  greeting.focus();
 });
