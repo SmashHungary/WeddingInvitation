@@ -230,3 +230,21 @@ button:focus-visible {
     margin-top: 4.5rem;
   }
 }
+
+#language-title {
+  font-size: clamp(2.6rem, 8vw, 4.2rem);
+  line-height: 1.15;
+}
+
+#language-title span {
+  display: block;
+  font-size: 1em;
+}
+
+#language-title span::before {
+  content: "✦";
+  display: block;
+  margin: 0.22em 0;
+  color: #d4ad5d;
+  font-size: 0.34em;
+}
