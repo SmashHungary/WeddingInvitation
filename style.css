@@ -1,0 +1,157 @@
+:root {
+  color-scheme: light;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #6ed7d7;
+  color: #264f59;
+}
+
+.page-ribbon {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: clamp(6rem, 14vw, 11rem) clamp(3.5rem, 12vw, 12rem) clamp(7rem, 15vw, 12rem);
+}
+
+.floral-decoration {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  width: clamp(7rem, 24vw, 16rem);
+  background-image: url("floral-side-tile.png");
+  background-repeat: repeat-y;
+  background-size: auto clamp(32rem, 62vh, 48rem);
+  opacity: 0.68;
+  pointer-events: none;
+}
+
+.floral-decoration--left {
+  left: 0;
+  background-position: left top;
+}
+
+.floral-decoration--right {
+  right: 0;
+  background-position: left top;
+  transform: scaleX(-1);
+}
+
+.horizontal-floral {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  width: 100%;
+  height: clamp(5.5rem, 13vw, 10rem);
+  background-image: url("floral-horizontal.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.horizontal-floral--top {
+  top: 0;
+  background-position: center top;
+}
+
+.horizontal-floral--bottom {
+  bottom: 0;
+  background-position: center bottom;
+}
+
+.welcome-card,
+.content-section {
+  position: relative;
+  z-index: 1;
+  max-width: 44rem;
+  margin-inline: auto;
+  text-align: center;
+  background: rgb(255 255 255 / 88%);
+  border: 1px solid #d4ad5d;
+  box-shadow: 0 18px 45px rgb(26 80 90 / 22%);
+}
+
+.welcome-card {
+  padding: clamp(2.5rem, 7vw, 4.5rem);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+.content-section {
+  margin-top: clamp(5rem, 12vw, 9rem);
+  padding: clamp(2rem, 5vw, 3.5rem);
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  color: #7c6332;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  margin: 0;
+  color: #295c68;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 9vw, 5rem);
+  letter-spacing: 0.04em;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+p:not(.eyebrow) {
+  max-width: 34rem;
+  margin: 1.25rem auto 0;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.7;
+}
+
+button {
+  margin-top: 1.75rem;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.75rem 1.25rem;
+  background: #2c7d8a;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus-visible {
+  background: #205e69;
+  outline: 3px solid rgb(255 255 255 / 80%);
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .page-ribbon {
+    padding-inline: 3.75rem;
+  }
+
+  .content-section {
+    margin-top: 4.5rem;
+  }
+}
