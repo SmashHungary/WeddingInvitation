@@ -253,7 +253,44 @@ button:focus-visible {
 
 @media (max-width: 600px) {
   .page-ribbon {
-    padding-inline: 3.75rem;
+    padding-inline: clamp(3rem, 14vw, 3.75rem);
+  }
+
+  .welcome-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .welcome-card h1 {
+    font-size: clamp(2.1rem, 9vw, 2.8rem);
+    letter-spacing: 0.015em;
+    overflow-wrap: anywhere;
+  }
+
+  .language-selector {
+    padding: 0.85rem;
+  }
+
+  .language-card {
+    padding: 1.5rem 1rem;
+  }
+
+  #language-title {
+    font-size: clamp(2rem, 10vw, 2.6rem);
+    overflow-wrap: anywhere;
+  }
+
+  .language-options {
+    gap: 0.7rem;
+    margin-top: 1.25rem;
+  }
+
+  .language-button {
+    min-height: clamp(8.5rem, 40vw, 11rem);
+    padding: 0.5rem;
+  }
+
+  .flag {
+    width: min(100%, 8.5rem);
   }
 
   .content-section {
