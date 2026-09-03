@@ -1,5 +1,6 @@
 const greeting = document.querySelector('#greeting');
 const languageSelector = document.querySelector('#language-selector');
+const languageCookieName = 'wedding-language';
 
 const translations = {
   en: {
@@ -42,6 +43,18 @@ const translations = {
 
 let currentLanguage = 'en';
 
+function getCookie(name) {
+  const cookie = document.cookie
+    .split('; ')
+    .find((entry) => entry.startsWith(`${name}=`));
+
+  return cookie ? decodeURIComponent(cookie.split('=').slice(1).join('=')) : null;
+}
+
+function saveLanguage(language) {
+  document.cookie = `${languageCookieName}=${encodeURIComponent(language)}; max-age=31536000; path=/; samesite=lax`;
+}
+
 function applyLanguage(language) {
   currentLanguage = language;
   const copy = translations[language];
@@ -53,6 +66,25 @@ function applyLanguage(language) {
   document.querySelectorAll('[data-copy]').forEach((element) => {
     element.textContent = copy[element.dataset.copy];
   });
+
+  document.querySelectorAll('[data-language]').forEach((button) => {
+    button.setAttribute('aria-pressed', String(button.dataset.language === language));
+  });
+}
+
+function selectLanguage(language, { focusGreeting = false } = {}) {
+  if (!translations[language]) {
+    return;
+  }
+
+  applyLanguage(language);
+  saveLanguage(language);
+  document.body.classList.add('language-selected');
+  languageSelector.setAttribute('aria-hidden', 'true');
+
+  if (focusGreeting) {
+    greeting.focus();
+  }
 }
 
 document.addEventListener('click', (event) => {
@@ -62,8 +94,13 @@ document.addEventListener('click', (event) => {
     return;
   }
 
-  applyLanguage(button.dataset.language);
-  document.body.classList.add('language-selected');
-  languageSelector.setAttribute('aria-hidden', 'true');
-  greeting.focus();
+  selectLanguage(button.dataset.language, {
+    focusGreeting: Boolean(button.closest('#language-selector')),
+  });
 });
+
+const savedLanguage = getCookie(languageCookieName);
+
+if (savedLanguage && translations[savedLanguage]) {
+  selectLanguage(savedLanguage);
+}
