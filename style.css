@@ -13,6 +13,69 @@ body {
   color: #264f59;
 }
 
+.language-selector {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: rgb(35 111 123 / 48%);
+  backdrop-filter: blur(5px);
+  transition: opacity 250ms ease, visibility 250ms ease;
+}
+
+body.language-selected .language-selector {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.language-card {
+  width: min(31rem, 100%);
+  padding: clamp(2rem, 7vw, 3.5rem);
+  text-align: center;
+  background: rgb(255 255 255 / 94%);
+  border: 1px solid #d4ad5d;
+  box-shadow: 0 22px 50px rgb(17 65 73 / 32%);
+}
+
+.language-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.language-button {
+  display: grid;
+  place-items: center;
+  min-height: 13.2rem;
+  margin: 0;
+  padding: 0.75rem;
+  border: 1px solid #d4ad5d;
+  border-radius: 0;
+  background: #ffffff;
+  color: #295c68;
+  font: inherit;
+  cursor: pointer;
+}
+
+.language-button:hover,
+.language-button:focus-visible {
+  background: #effcfb;
+  outline: 3px solid #2c7d8a;
+  outline-offset: 3px;
+}
+
+.flag {
+  display: block;
+  width: clamp(8.1rem, 27vw, 10.8rem);
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  border: 1px solid rgb(41 92 104 / 20%);
+  box-shadow: 0 0.25rem 0.6rem rgb(41 92 104 / 18%);
+}
+
 .page-ribbon {
   position: relative;
   isolation: isolate;
@@ -93,6 +156,18 @@ main {
 .content-section {
   margin-top: clamp(5rem, 12vw, 9rem);
   padding: clamp(2rem, 5vw, 3.5rem);
+}
+
+.section-divider {
+  width: min(28rem, 90%);
+  height: clamp(4.5rem, 12vw, 7rem);
+  margin: clamp(3rem, 8vw, 5rem) auto;
+  background: url("floral-divider.png") center / contain no-repeat;
+  opacity: 0.88;
+}
+
+.section-divider + .content-section {
+  margin-top: 0;
 }
 
 .eyebrow {
