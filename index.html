@@ -7,41 +7,61 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="language-selector" id="language-selector" role="dialog" aria-modal="true" aria-label="Language selector">
+      <div class="language-card">
+        <h1 id="language-title">Welcome <span lang="tl">· Maligayang pagdating</span></h1>
+        <div class="language-options">
+          <button class="language-button" type="button" data-language="en" aria-label="English">
+            <img class="flag" src="flag-uk.svg" alt="" />
+          </button>
+          <button class="language-button" type="button" data-language="fil" aria-label="Filipino">
+            <img class="flag" src="flag-ph.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div class="page-ribbon">
       <div class="floral-decoration floral-decoration--left" aria-hidden="true"></div>
       <div class="floral-decoration floral-decoration--right" aria-hidden="true"></div>
       <div class="horizontal-floral horizontal-floral--top" aria-hidden="true"></div>
 
       <header class="welcome-card intro-section">
-        <p class="eyebrow">Esküvői meghívó</p>
-        <h1 id="greeting">Helló!</h1>
-        <p>Ez a kezdő szekció — görgess lejjebb a meghívó további részeihez.</p>
-        <button id="toggle-greeting" type="button">Váltás</button>
+        <p class="eyebrow" data-copy="invitation">Wedding invitation</p>
+        <h1 id="greeting" tabindex="-1">Hello!</h1>
+        <p data-copy="intro">This is the opening section — scroll down to discover the rest of the invitation.</p>
+        <button id="toggle-greeting" type="button" data-copy="toggle">Switch greeting</button>
       </header>
 
       <main>
         <section class="content-section">
-          <p class="eyebrow">Első szekció</p>
-          <h2>Találkozás</h2>
-          <p>Itt később a meghívó bevezetője, egy kedves üzenet vagy a pár rövid története kaphat helyet.</p>
+          <p class="eyebrow" data-copy="sectionOne">First section</p>
+          <h2 data-copy="meetingTitle">Our story</h2>
+          <p data-copy="meetingText">This is where a warm introduction, a personal message, or a short story about the couple can appear.</p>
         </section>
 
-        <section class="content-section">
-          <p class="eyebrow">Második szekció</p>
-          <h2>A nagy nap</h2>
-          <p>Ez a terület ideális a dátum, a ceremónia helyszíne és az érkezéssel kapcsolatos információk számára.</p>
-        </section>
+        <div class="section-divider" aria-hidden="true"></div>
 
         <section class="content-section">
-          <p class="eyebrow">Harmadik szekció</p>
-          <h2>Ünneplés</h2>
-          <p>A vacsora, a programok és a visszajelzés részletei később itt jelenhetnek meg.</p>
+          <p class="eyebrow" data-copy="sectionTwo">Second section</p>
+          <h2 data-copy="dayTitle">The big day</h2>
+          <p data-copy="dayText">This area is ideal for the date, ceremony location, and practical information about arriving.</p>
         </section>
 
+        <div class="section-divider" aria-hidden="true"></div>
+
         <section class="content-section">
-          <p class="eyebrow">Negyedik szekció</p>
-          <h2>Örülünk, hogy velünk lesztek</h2>
-          <p>Ez a záró blokk jó hely egy személyes üzenetnek vagy egy válaszgombnak.</p>
+          <p class="eyebrow" data-copy="sectionThree">Third section</p>
+          <h2 data-copy="celebrationTitle">Celebration</h2>
+          <p data-copy="celebrationText">Details about dinner, the programme, and your RSVP can appear here later.</p>
+        </section>
+
+        <div class="section-divider" aria-hidden="true"></div>
+
+        <section class="content-section">
+          <p class="eyebrow" data-copy="sectionFour">Fourth section</p>
+          <h2 data-copy="closingTitle">We hope you can join us</h2>
+          <p data-copy="closingText">This final block is a lovely place for a personal note or an RSVP button.</p>
         </section>
       </main>
 
