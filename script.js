@@ -1,5 +1,4 @@
 const greeting = document.querySelector('#greeting');
-const toggleButton = document.querySelector('#toggle-greeting');
 const languageSelector = document.querySelector('#language-selector');
 const languageButtons = document.querySelectorAll('[data-language]');
 
@@ -7,10 +6,8 @@ const translations = {
   en: {
     pageTitle: 'Wedding invitation',
     greeting: 'Hello!',
-    alternateGreeting: 'Hi!',
     invitation: 'Wedding invitation',
     intro: 'This is the opening section — scroll down to discover the rest of the invitation.',
-    toggle: 'Switch greeting',
     sectionOne: 'First section',
     meetingTitle: 'Our story',
     meetingText: 'This is where a warm introduction, a personal message, or a short story about the couple can appear.',
@@ -27,10 +24,8 @@ const translations = {
   fil: {
     pageTitle: 'Imbitasyon sa kasal',
     greeting: 'Kumusta!',
-    alternateGreeting: 'Kamusta!',
     invitation: 'Imbitasyon sa kasal',
     intro: 'Ito ang pambungad na bahagi — mag-scroll pababa upang makita ang iba pang bahagi ng imbitasyon.',
-    toggle: 'Palitan ang pagbati',
     sectionOne: 'Unang bahagi',
     meetingTitle: 'Ang aming kuwento',
     meetingText: 'Dito maaaring ilagay ang isang mainit na pambungad, personal na mensahe, o maikling kuwento tungkol sa magkasintahan.',
@@ -60,11 +55,6 @@ function applyLanguage(language) {
     element.textContent = copy[element.dataset.copy];
   });
 }
-
-toggleButton.addEventListener('click', () => {
-  const copy = translations[currentLanguage];
-  greeting.textContent = greeting.textContent === copy.greeting ? copy.alternateGreeting : copy.greeting;
-});
 
 languageButtons.forEach((button) => {
   button.addEventListener('click', () => {
