@@ -4,9 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Köszöntő</title>
-    <link rel="stylesheet" href="style.css?v=20260903-9" />
+    <link rel="stylesheet" href="style.css?v=20260904-2" />
   </head>
   <body>
+    <div class="page-loader" id="page-loader" role="status" aria-live="polite">
+      <div class="page-loader__card">
+        <p class="eyebrow">Wedding invitation</p>
+        <p>Preparing your invitation…</p>
+        <p lang="fil">Inihahanda ang inyong imbitasyon…</p>
+      </div>
+    </div>
+
     <div class="language-selector" id="language-selector" role="dialog" aria-modal="true" aria-label="Language selector">
       <div class="language-card">
         <h1 id="language-title">Welcome <span lang="tl">Maligayang pagdating</span></h1>
@@ -73,11 +81,21 @@
           <h2 data-copy="closingTitle">We hope you can join us</h2>
           <p data-copy="closingText">This final block is a lovely place for a personal note or an RSVP button.</p>
         </section>
+
+        <div class="section-divider" aria-hidden="true"></div>
+
+        <section class="rsvp-card" id="rsvp-section" hidden aria-live="polite">
+          <p class="eyebrow" id="rsvp-eyebrow">RSVP</p>
+          <h2 id="rsvp-title"></h2>
+          <p id="rsvp-message"></p>
+          <div class="rsvp-actions" id="rsvp-actions"></div>
+          <p class="rsvp-status" id="rsvp-status" role="status"></p>
+        </section>
       </main>
 
       <div class="horizontal-floral horizontal-floral--bottom" aria-hidden="true"></div>
     </div>
 
-    <script src="script.js?v=20260903-4"></script>
+    <script src="script.js?v=20260904-4"></script>
   </body>
 </html>
