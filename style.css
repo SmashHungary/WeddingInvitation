@@ -5,6 +5,7 @@
   font-family: Georgia, "Times New Roman", serif;
   --script-font: "Sacramento", "Segoe Script", cursive;
   --side-floral-width: clamp(7rem, 24vw, 16rem);
+  --corner-sun-size: clamp(2.7rem, 6vw, 4.5rem);
 }
 
 * {
@@ -273,13 +274,49 @@ body.language-selected .language-switcher {
   max-width: 44rem;
   margin-inline: auto;
   text-align: center;
-  background: rgb(255 255 255 / 88%);
-  border: 1px solid #d4ad5d;
+  background: rgb(255 255 255 / 68%);
+  border: 3px solid rgb(212 173 93 / 88%);
   box-shadow: 0 18px 45px rgb(26 80 90 / 22%);
+}
+
+.welcome-card::before,
+.content-section::before,
+.rsvp-card::before,
+.welcome-card::after,
+.content-section::after,
+.rsvp-card::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: var(--corner-sun-size);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background: url("philippine-sun-corner.png?v=3") center / contain no-repeat;
+  pointer-events: none;
+}
+
+.welcome-card::after,
+.content-section::after,
+.rsvp-card::after {
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  transform: translate(50%, 50%);
 }
 
 .welcome-card {
   padding: clamp(2.5rem, 7vw, 4.5rem);
+}
+
+.welcome-photo {
+  display: block;
+  width: min(100%, 34rem);
+  max-height: clamp(12rem, 35vw, 20rem);
+  margin: 0 auto clamp(1.5rem, 4vw, 2.5rem);
+  object-fit: contain;
 }
 
 main {
