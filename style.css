@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+
 :root {
   color-scheme: light;
   font-family: Georgia, "Times New Roman", serif;
+  --script-font: "Sacramento", "Segoe Script", cursive;
   --side-floral-width: clamp(7rem, 24vw, 16rem);
 }
 
@@ -10,7 +13,7 @@
 
 body {
   margin: 0;
-  background: #6ed7d7;
+  background: #B8E3E9;
   color: #264f59;
 }
 
@@ -176,8 +179,10 @@ body.language-selected .language-switcher {
 }
 
 #language-title {
+  font-family: var(--script-font);
   font-size: clamp(2.6rem, 8vw, 4.2rem);
   line-height: 1.15;
+  font-weight: 400;
 }
 
 #language-title span {
@@ -346,16 +351,18 @@ h1,
 h2 {
   margin: 0;
   color: #295c68;
+  font-family: var(--script-font);
   font-weight: 400;
+  line-height: 1.1;
 }
 
 h1 {
   font-size: clamp(2.8rem, 9vw, 5rem);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.01em;
 }
 
 h2 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2.25rem, 5vw, 3.35rem);
 }
 
 p:not(.eyebrow) {
